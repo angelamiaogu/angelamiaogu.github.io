@@ -17,7 +17,7 @@ p {
 
 /* background image url image */
 
-body {
+.angbutter {
     background-image: url('https://media.tenor.com/PyFwuj50i2IAAAAj/borboletas-butterflies.gif');
     /* background-repeat: no-repeat; */
     background-size: 100%;
