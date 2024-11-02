@@ -1,0 +1,25 @@
+#angela112233 {
+    color: rgba(251, 151, 191, 0.962);
+    background-color: rgb(255, 255, 255);
+}
+
+p {
+    color: rgb(255, 255, 255);
+    background-color: rgb(250, 167, 207);
+}
+
+.angela_fav_settings {
+    color: rgb(244, 9, 9);
+    background-color: rgb(250, 167, 207);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+/* background image url image */
+
+body {
+    background-image: url('https://media.tenor.com/PyFwuj50i2IAAAAj/borboletas-butterflies.gif');
+    /* background-repeat: no-repeat; */
+    background-size: 100%;
+
+}   
