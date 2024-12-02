@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mole Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+        .game-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .section {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #000;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mole {
+            width: 75px; /* Set initial size */
+            height: 75px;
+            position: absolute;
+            display: none;
+            cursor: pointer;
+            transition: width 0.3s, height 0.3s;
+        }
+        .scoreboard, .timer {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreboard">Score: <span id="score">0</span></div>
+    <div class="timer">Time: <span id="timer">30</span> seconds</div>
+
+    <div class="game-container">
+        <div class="section" id="section1">
+            <img src="Mole.png" alt="Mole" class="mole" id="mole1">
+        </div>
+        <div class="section" id="section2">
+            <img src="Mole.png" alt="Mole" class="mole" id="mole2">
+        </div>
+        <div class="section" id="section3">
+            <img src="Mole.png" alt="Mole" class="mole" id="mole3">
+        </div>
+        <div class="section" id="section4">
+            <img src="Mole.png" alt="Mole" class="mole" id="mole4">
+        </div>
+    </div>
+
+    <script>
+        let score = 0;
+        let timer = 30;
+
+        // Function to show mole randomly in a section
+        function showMole() {
+            // Hide all moles
+            document.querySelectorAll('.mole').forEach(mole => mole.style.display = 'none');
+            
+            // Randomly choose a section
+            let rn = Math.floor(Math.random() * 4);
+            let randomSection = `mole${rn + 1}`;
+            const mole = document.getElementById(randomSection);
+            mole.style.display = 'block';
+
+            // Resize mole to fit screen width (responsive)
+            let moleSize = window.innerWidth * 0.1; // Mole size is 20% of screen width
+            mole.style.width = `${moleSize}px`;
+            mole.style.height = `${moleSize}px`;
+
+            // Hide mole after a delay
+            setTimeout(() => {
+                mole.style.display = 'none';
+            }, 1000);
+        }
+
+        // Increase score when mole is clicked
+        document.querySelectorAll('.mole').forEach(mole => {
+            mole.addEventListener('click', () => {
+                score++;
+                document.getElementById('score').textContent = score;
+                mole.style.display = 'none'; // Hide mole on click
+            });
+        });
+
+        // Start the timer countdown
+        const timerInterval = setInterval(() => {
+            if (timer > 0) {
+                timer--;
+                document.getElementById('timer').textContent = `${timer} seconds`;
+            } else {
+                clearInterval(timerInterval); // Stop the timer when it reaches 0
+                alert('Game Over! Your final score is ' + score);
+            }
+        }, 1000);
+
+        // Show the mole at intervals
+        setInterval(showMole, 500);
+    </script>
+</body>
+</html>

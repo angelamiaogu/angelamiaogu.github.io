@@ -23,3 +23,22 @@ p {
     background-size: 100%;
 
 }   
+
+nav {
+    background-color: rgb(250, 167, 207);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
