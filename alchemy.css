@@ -1,0 +1,50 @@
+body {
+    background-color:rgb(255, 100, 175);
+}
+
+
+.header1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.header2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 150, 201);
+}
+
+.ChatResponse {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 178, 216);
+
+}
+
+.ChatInput {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.ChatInput input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.ChatInput button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ChatInput button:hover {        
+    background-color: rgb(255, 255, 255);
+}
